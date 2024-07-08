@@ -8,11 +8,11 @@ function setup() {
 function draw() {
     background("black");
     fill("red");
-    rect(0, 0, 60, 40);
+    rect(width - 100, 0, 100, 60);
     fill("white");
    
-    text(s, 100, 100);
-    textSize(20);
+    text(s, width - 65, 45);
+    textSize(40);
 
     if (s === 0) {
         
