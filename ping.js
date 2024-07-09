@@ -1,7 +1,9 @@
 let s;
+let xPos = 400;
+let yPos = 200;
 
 function setup() {
-    createCanvas(800, 400);
+    createCanvas(screen.width - 30, screen.height -150);
     task(30);
 }
 
@@ -13,6 +15,14 @@ function draw() {
    
     text(s, width - 65, 45);
     textSize(40);
+
+    circle(xPos, yPos, 50);
+    if (xPos > width) {
+        xPos -= 5;
+    }
+    else if (xPos < 0) {
+        xPos
+    }
 
     if (s === 0) {
         
