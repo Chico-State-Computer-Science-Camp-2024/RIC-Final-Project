@@ -25,7 +25,7 @@ function draw() {
     }
 
     if (s === 0) {
-        
+        help
     
     }
     
