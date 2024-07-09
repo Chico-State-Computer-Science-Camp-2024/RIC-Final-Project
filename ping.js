@@ -15,7 +15,7 @@ function draw() {
     textSize(40);
 
     if (s === 0) {
-        
+        help
     
     }
     
