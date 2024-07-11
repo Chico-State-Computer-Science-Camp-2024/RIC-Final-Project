@@ -1,0 +1,22 @@
+body {
+    background-image: url(/images/fire-frame.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120px;
+}
+
+.CharSelect {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.text {
+    display: flex;
+    justify-content: space-evenly;
+}
