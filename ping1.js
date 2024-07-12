@@ -25,18 +25,18 @@ let background1;
 function preload() {
     img = loadImage('image.png');
     winScreen = loadImage('youwin.png');
-    character1 = loadImage('character.gif');
+    character1 = loadImage('jigobidle.gif');
     character = character1;
     boss1 = loadImage('boss.gif');
     boss = boss1;
-    lefthit = loadImage('lefthitp.gif');
-    righthit = loadImage('righthitp.gif');
+    lefthit = loadImage('jigoblefthit.gif');
+    righthit = loadImage('jigobRighthit.gif');
     saboss = loadImage('sabosshit.gif');
     background1 = loadImage('/images/tonyliq.png');
     continueimg = loadImage('/images/continuetext.png');
     yesimg = loadImage('/images/yes.png');
     noimg = loadImage('/images/no.png');
-    straightshot = loadImage('straightshot.gif');
+    straightshot = loadImage('jigobstraight.gif');
     for (let i = 0; i < 7; i++) {
         health.push(loadImage('healthbar' + i + '.png'));
     }
@@ -63,7 +63,7 @@ function draw() {
     circle(xPos, yPos, 50);
     image(boss, innerWidth * 4 / 5 - 100, bPos, 300, 300);
     image(character, innerWidth * 1 / 5 - 100, pPos, 300, 300);
-    image(health[n], 0, 0, 300, 300);
+    image(health[n], innerWidth / 2 - 250, 0, 500, 200);
     playerMove();
 
  if (xPos > innerWidth) {
