@@ -57,3 +57,8 @@ hover {
     display: flex;
     justify-content: space-evenly;
 }
+
+.p5Canvas {
+    display: flex;
+    justify-self: center;
+}

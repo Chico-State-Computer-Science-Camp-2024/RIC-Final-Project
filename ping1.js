@@ -22,34 +22,24 @@ let n = 0;
 let background1;
 
 
-
-let tryagain;
-let youlose;
-
-
 function preload() {
     img = loadImage('image.png');
     winScreen = loadImage('youwin.png');
-    character1 = loadImage('character.gif');
+    character1 = loadImage('jigobidle.gif');
     character = character1;
     boss1 = loadImage('boss.gif');
     boss = boss1;
-    lefthit = loadImage('lefthitp.gif');
-    righthit = loadImage('righthitp.gif');
+    lefthit = loadImage('jigoblefthit.gif');
+    righthit = loadImage('jigobRighthit.gif');
     saboss = loadImage('sabosshit.gif');
     background1 = loadImage('/images/tonyliq.png');
     continueimg = loadImage('/images/continuetext.png');
     yesimg = loadImage('/images/yes.png');
     noimg = loadImage('/images/no.png');
-    straightshot = loadImage('straightshot.gif');
+    straightshot = loadImage('jigobstraight.gif');
     for (let i = 0; i < 7; i++) {
         health.push(loadImage('healthbar' + i + '.png'));
     }
-
-    youlose= loadImage('youlose.png');
-    tryagain = loadImage('/images/tryagaintext.png');
-    yesimg2 = loadImage('/images/yes.png');
-    noimg2 = loadImage('/images/no.png');
 }
 
 
@@ -73,7 +63,7 @@ function draw() {
     circle(xPos, yPos, 50);
     image(boss, innerWidth * 4 / 5 - 100, bPos, 300, 300);
     image(character, innerWidth * 1 / 5 - 100, pPos, 300, 300);
-    image(health[n], 0, 0, 300, 300);
+    image(health[n], innerWidth / 2 - 250, 0, 500, 200);
     playerMove();
 
  if (xPos > innerWidth) {
@@ -167,33 +157,22 @@ if (yPos <= innerHeight && side == 7) {
         }, 1000);
     }
     ballPos();
-    xPos += speed;
-    if (s === 0) {
-        background('black');
-        image(youlose, 766, 0, 300, 300);
-        image(tryagain, 700, 200, 500, 500);
-        image(noimg2, 970, 660, 200, 200);
-        image(yesimg2, 701, 640, 220, 220);
-        return;
+   xPos += speed;
+
+    if (s <= 0) {
+        background("black");
+        image(winScreen, 590, 0, 300, 300);
+        image(continueimg, 500, 200, 500, 500);
+        image(noimg, 800, 660, 200, 200); 750, 660
+        image(yesimg, 500, 640, 220, 220);550, 650     
+         
     }
-
-    
+   
 }
-
-
-//if boss bar 0 ok ten //  Win screen, make sure to add it when the boss's health bar is empty
-        // background('black');
-        // image(winScreen, 766, 0, 300, 300);
-        // image(continueimg, 700, 200, 500, 500);
-        // image(noimg, 970, 660, 200, 200);
-        // image(yesimg, 701, 640, 220, 220);
-
-function task(t) {
-    if (t >= 0) {
-        s = t;
-        setTimeout(function() {
-            task(t - 1);
-        }, 1000);
+function task() {
+    if (s > 0) {
+        s -= 1; // Decrement the global time variable directly
+        setTimeout(task, 1000); // Call task again after 1 second
     }
 }
 
@@ -203,9 +182,11 @@ function ballPos() {
     }
     else if (side === 'right') {
         yPos += 2;
-    } else if (side === 2) {
+    }
+    else if (side === 2) {
         yPos += 2;
-    } else if (side === 3) {
+    }
+    else if (side === 3) {
         yPos += 2;
  
     }
@@ -215,23 +196,12 @@ function ballPos() {
 }
 
 function playerMove() {
-    if (keyIsDown(87) && pPos > (innerHeight / 2) - innerWidth / 4 + 100) {
-        pPos -= 3.5;
-    }
-
+   
+    if (keyIsDown(87) && pPos > (innerHeight / 2) - innerWidth / 4 + 100){
+            pPos -= 3.5;
+        }
+    
     if (keyIsDown(83) && pPos <= ((innerHeight / 2) + innerWidth / 4) - 400) {
         pPos += 3.5;
     }
 }
-
-function mousePressed() {
-    if (mouseX > 970 && mouseX < 970 + 200 && mouseY > 660 && mouseY < 660 + 200) {
-        window.location.href = "index.html";
-    } else if (mouseX > 701 && mouseX < 701 + 220 && mouseY > 640 && mouseY < 640 + 220) {
-        window.location.href = "index3.html";
-    }
-}
-
-
-
-
