@@ -14,7 +14,7 @@ let righthitp;
 let saboss;
 let continueimg;
 let yesimg;
-let noimg;
+let noimg
 
 let background1;
 
