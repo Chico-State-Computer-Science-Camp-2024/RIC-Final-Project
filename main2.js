@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pos.style.right = 1/2 * screen.width + 'px';     
         function move() {
           if (bottomValue <= screen.height) {
-            bottomValue += 1;
+            bottomValue += 0.8;
             pos.style.bottom = bottomValue + 'px';
 
             requestAnimationFrame(move);
