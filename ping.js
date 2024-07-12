@@ -10,7 +10,7 @@ let character;
 let continueimg;
 let yesimg;
 let noimg
-
+let z = 0;
 let background1;
 let boss;
 let bPos = innerHeight / 2;
