@@ -12,6 +12,12 @@ let bPos = innerHeight / 2;
 let lefthit;
 let righthitp;
 let saboss;
+let continueimg;
+let yesimg;
+let noimg;
+
+let background1;
+
 
 function preload() {
     img = loadImage('image.png');
