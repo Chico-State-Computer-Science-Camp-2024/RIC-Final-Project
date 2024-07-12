@@ -7,11 +7,6 @@ let speed = 5;
 let winScreen;
 let side = 7;
 let character;
-let continueimg;
-let yesimg;
-let noimg
-let z = 0;
-let background1;
 let boss;
 let bPos = innerHeight / 2;
 let lefthit;
@@ -21,11 +16,13 @@ let saboss;
 function preload() {
     img = loadImage('image.png');
     winScreen = loadImage('youwin.png');
-    character = loadImage('character.gif');
-    background1 = loadImage('/images/tonyliq.png');
-    continueimg = loadImage('/images/continuetext.png');
-    yesimg = loadImage('/images/yes.png');
-    noimg = loadImage('/images/no.png');
+    character1 = loadImage('character.gif');
+    character = character1;
+    boss1 = loadImage('boss.gif');
+    boss = boss1;
+    lefthit = loadImage('lefthitp.gif');
+    righthit = loadImage('righthitp.gif');
+    saboss = loadImage('sabosshit.gif');
 }
 
 function setup() {
@@ -35,10 +32,11 @@ function setup() {
 }
 
 function draw() {
-    background(background1);
+    background("black");
     fill("red");
     rect(width - 100, 0, 100, 60);
     fill("white");
+   
     text(s, width - 65, 45);
     textSize(40);
     image(img, innerWidth * 1 / 4, innerHeight / 4, innerWidth / 2, innerHeight / 2);
@@ -129,12 +127,10 @@ if (yPos <= innerHeight && side == 7) {
     }
     ballPos();
    xPos += speed;
+
     if (s === 0) {
-        background('black');
-        image(winScreen, 590, 0, 300, 300);
-        image(continueimg, 500, 200, 500, 500);
-        image(noimg, 800, 660, 200, 200); 750, 660
-        image(yesimg, 500, 640, 220, 220);550, 650
+        background("black");
+        image(winScreen, 0, 0, innerWidth, innerHeight);
         return;
     }
    
@@ -177,4 +173,3 @@ function playerMove() {
         pPos += 3.5;
     }
 }
-hi
