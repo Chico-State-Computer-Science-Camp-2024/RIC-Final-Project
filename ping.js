@@ -29,6 +29,11 @@ function preload() {
     lefthit = loadImage('lefthitp.gif');
     righthit = loadImage('righthitp.gif');
     saboss = loadImage('sabosshit.gif');
+    background1 = loadImage('/images/tonyliq.png');
+    continueimg = loadImage('/images/continuetext.png');
+    yesimg = loadImage('/images/yes.png');
+    noimg = loadImage('/images/no.png');
+
 }
 
 function setup() {
@@ -136,8 +141,11 @@ if (yPos <= innerHeight && side == 7) {
 
     if (s === 0) {
         background("black");
-        image(winScreen, 0, 0, innerWidth, innerHeight);
-        return;
+        image(winScreen, 590, 0, 300, 300);
+        image(continueimg, 500, 200, 500, 500);
+        image(noimg, 800, 660, 200, 200); 750, 660
+        image(yesimg, 500, 640, 220, 220);550, 650     
+           return;
     }
    
 }
