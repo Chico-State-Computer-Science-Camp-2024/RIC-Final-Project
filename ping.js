@@ -1,4 +1,4 @@
-let s = 45;
+let s = 60;
 let xPos = innerWidth / 2;
 let yPos = innerHeight / 2;
 let pPos = innerHeight / 2;
@@ -73,7 +73,7 @@ function draw() {
     circle(xPos, yPos, 50);
     image(boss, innerWidth * 4 / 5 - 100, bPos, 300, 300);
     image(character, innerWidth * 1 / 5 - 100, pPos, 300, 300);
-    image(health[n], 0, 0, 300, 300);
+    image(health[n], innerWidth / 2 - 250, 0, 500, 200);
     playerMove();
 
  if (xPos > innerWidth) {
@@ -109,7 +109,9 @@ if (yPos <= innerHeight && side == 7) {
             }
         }
         if  (bPos == 162 && yPos == 325 ) {
-            n++;
+            if (n > 0) {
+                n++;
+            }
             boss = saboss;
             speed = -speed;
             side = 9;
@@ -135,6 +137,9 @@ if (yPos <= innerHeight && side == 7) {
             }, 1000);
         }
         if (xPos >= innerWidth * 4 / 5 - 100) {
+            if (n > 0) {
+                n++;
+            }
             s -= 1;      
         }
     }
@@ -168,7 +173,7 @@ if (yPos <= innerHeight && side == 7) {
     }
     ballPos();
     xPos += speed;
-    if (s === 0) {
+    if (s >= 0) {
         background('black');
         image(youlose, 766, 0, 300, 300);
         image(tryagain, 700, 200, 500, 500);
@@ -181,12 +186,13 @@ if (yPos <= innerHeight && side == 7) {
 }
 
 
-//if boss bar 0 ok ten //  Win screen, make sure to add it when the boss's health bar is empty
-        // background('black');
-        // image(winScreen, 766, 0, 300, 300);
-        // image(continueimg, 700, 200, 500, 500);
-        // image(noimg, 970, 660, 200, 200);
-        // image(yesimg, 701, 640, 220, 220);
+if (n == 7) {
+        background('black');
+         image(winScreen, 766, 0, 300, 300);
+        image(continueimg, 700, 200, 500, 500);
+        image(noimg, 970, 660, 200, 200);
+        image(yesimg, 701, 640, 220, 220);
+}
 
 function task(t) {
     if (t >= 0) {
@@ -235,3 +241,8 @@ function mousePressed() {
 
 
 
+let music2 = new Audio('battletheme.mp3');
+document.addEventListener('DOMContentLoaded', function() {
+  music2.autoplay = true;
+  music2.play().catch;
+});

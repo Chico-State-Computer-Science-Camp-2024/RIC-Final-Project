@@ -1,4 +1,4 @@
-let s = 45;
+let s = 60;
 let xPos = innerWidth / 2;
 let yPos = innerHeight / 2;
 let pPos = innerHeight / 2;
@@ -159,7 +159,7 @@ if (yPos <= innerHeight && side == 7) {
     ballPos();
    xPos += speed;
 
-    if (s <= 0) {
+   /* if (s <= 0) {
         background("black");
         image(winScreen, 590, 0, 300, 300);
         image(continueimg, 500, 200, 500, 500);
@@ -167,6 +167,15 @@ if (yPos <= innerHeight && side == 7) {
         image(yesimg, 500, 640, 220, 220);550, 650     
          
     }
+        */
+       if (n == 0) {
+        background("black");
+        image(winScreen, 590, 0, 300, 300);
+        image(continueimg, 500, 200, 500, 500);
+        image(noimg, 800, 660, 200, 200); 750, 660
+        image(yesimg, 500, 640, 220, 220);550, 650
+       }
+    
    
 }
 function task() {
@@ -205,3 +214,8 @@ function playerMove() {
         pPos += 3.5;
     }
 }
+let music2 = new Audio('battletheme.mp3');
+document.addEventListener('DOMContentLoaded', function() {
+  music2.autoplay = true;
+  music2.play().catch;
+});
