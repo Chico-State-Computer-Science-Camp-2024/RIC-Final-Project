@@ -12,6 +12,11 @@ let yesimg;
 let noimg
 
 let background1;
+let boss;
+let bPos = innerHeight / 2;
+let lefthit;
+let righthitp;
+let saboss;
 
 function preload() {
     img = loadImage('image.png');
@@ -25,7 +30,7 @@ function preload() {
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    task(30);
+    task(40);
     
 }
 
@@ -38,39 +43,89 @@ function draw() {
     textSize(40);
     image(img, innerWidth * 1 / 4, innerHeight / 4, innerWidth / 2, innerHeight / 2);
     circle(xPos, yPos, 50);
+    image(boss, innerWidth * 4 / 5 - 100, bPos, 300, 300);
     image(character, innerWidth * 1 / 5 - 100, pPos, 300, 300);
     playerMove();
+
+ 
 
 if (yPos <= innerHeight && side == 7) {
     yPos += 2;
 }
-    
+  
     if ((xPos >= Math.floor((innerWidth * 3 / 4) - 10) && xPos <= Math.floor((innerWidth * 3 / 4) + 10))) {
-       if (yPos == innerHeight / 2) {
-        speed = -speed;
+        if (bPos == 491 && yPos == 661) {
+            boss = saboss;
+            speed = -speed;
+            let rand = Math.random() * 100;
+            let = rand2 = Math.random() * 100;
+            if (rand > 50) {
+                bPos = 162;
+            }
+            else if (rand < 50){
+                bPos = 491;
+            }
+
+            if (rand2 > 50) {
+                side = 'left';
+            }
+            else {
+                side = 'straight';
+            }
         }
-        else if (yPos > innerHeight / 2  && yPos <= innerHeight / 2 + 1000) {
+        if  (bPos == 162 && yPos == 325 ) {
+            boss = saboss;
             speed = -speed;
             side = 9;
+            rand = Math.random() * 100;
+            let rand2 = Math.random() * 100;
+            if (rand > 50) {
+                bPos = 162;
+            }
+            else if (rand < 50){
+                bPos = 491;
+            }
+            if (rand2 > 50) {
+                side = 'right';
+            }
+            else {
+                side = 'straight';
+            }
         }
-        else {
-            speed = -speed;
-            side = 9;
+        if (boss != boss1) {
+            setTimeout(function() {
+                saboss.reset();
+                boss = boss1;
+            }, 1000);
+        
         }
     }
     else if (xPos >= Math.floor((innerWidth * 1 / 4) - 10) && xPos <= Math.floor((innerWidth * 1 / 4) + 10)) {
-        console.log(yPos)
+        if ((keyIsDown(65) && ((pPos == 162 && yPos == 325) || (pPos == 519 && yPos == 661)))) {
         speed = -speed;
-        if (keyIsDown(65)) {
-        side = 0;
+        character = lefthit;
+        console.log('hit');
+        side = 'left';
         }
-        else if ((keyIsDown(68) && pPos == 162 && yPos == 325)) {
-
-            side = 2;
+        else if ((keyIsDown(68) && ((pPos == 162 && yPos == 325) || (pPos == 519 && yPos == 661)))) {
+            speed = -speed;
+            character = righthit;
+            side = 'right';
         }
-        else {
+        else if (keyIsDown(32) && ((pPos == 162 && yPos == 325) || (pPos == 519 && yPos == 661))) {
+            speed = -speed;
             side = 9;
         }
+        else {
+            s -= 5;
+            speed = -speed;
+            side = 'straight'
+        }
+        setTimeout(function() {
+            character = character1;
+            lefthit.reset();
+            righthit.reset();
+        }, 1000);
     }
     ballPos();
    xPos += speed;
@@ -94,10 +149,10 @@ function task(t) {
 }
 
 function ballPos() {
-    if (side === 0) {
+    if (side === 'left') {
         yPos -= 2;
     }
-    else if (side === 1) {
+    else if (side === 'right') {
         yPos += 2;
     }
     else if (side === 2) {
@@ -107,7 +162,7 @@ function ballPos() {
         yPos += 2;
  
     }
-    else if (side === 9) {
+    else if (side == 'straight') {
         yPos += 0;
     }
 }
@@ -122,3 +177,4 @@ function playerMove() {
         pPos += 3.5;
     }
 }
+hi
