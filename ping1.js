@@ -80,6 +80,9 @@ if (yPos <= innerHeight && side == 7) {
   
     if ((xPos >= Math.floor((innerWidth * 3 / 4) - 10) && xPos <= Math.floor((innerWidth * 3 / 4) + 10))) {
         if (bPos == 491 && yPos == 661) {
+            if (n < 6) 
+                {n++;
+                }
             boss = saboss;
             speed = -speed;
             let rand = Math.random() * 100;
@@ -99,7 +102,9 @@ if (yPos <= innerHeight && side == 7) {
             }
         }
         if  (bPos == 162 && yPos == 325 ) {
-            n++;
+           if (n < 6) 
+            {n++;
+            }
             boss = saboss;
             speed = -speed;
             side = 9;
@@ -168,12 +173,12 @@ if (yPos <= innerHeight && side == 7) {
          
     }
         */
-       if (n == 0) {
-        background("black");
-        image(winScreen, 590, 0, 300, 300);
-        image(continueimg, 500, 200, 500, 500);
-        image(noimg, 800, 660, 200, 200); 750, 660
-        image(yesimg, 500, 640, 220, 220);550, 650
+       if (n == 6) {
+        background('black');
+        image(winScreen, 766, 0, 300, 300);
+        image(continueimg, 700, 200, 500, 500);
+        image(noimg, 970, 660, 200, 200);
+        image(yesimg, 701, 640, 220, 220);
        }
     
    
@@ -219,3 +224,11 @@ document.addEventListener('DOMContentLoaded', function() {
   music2.autoplay = true;
   music2.play().catch;
 });
+
+function mousePressed() {
+    if (mouseX > 970 && mouseX < 970 + 200 && mouseY > 660 && mouseY < 660 + 200) {
+        window.location.href = "index.html";
+    } else if (mouseX > 701 && mouseX < 701 + 220 && mouseY > 640 && mouseY < 640 + 220) {
+        window.location.href = "index6.html";
+    }
+}

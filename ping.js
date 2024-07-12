@@ -109,7 +109,7 @@ if (yPos <= innerHeight && side == 7) {
             }
         }
         if  (bPos == 162 && yPos == 325 ) {
-            if (n > 0) {
+            if (n < 6) {
                 n++;
             }
             boss = saboss;
@@ -136,10 +136,10 @@ if (yPos <= innerHeight && side == 7) {
                 boss = boss1;
             }, 1000);
         }
-        if (xPos >= innerWidth * 4 / 5 - 100) {
-            if (n > 0) {
-                n++;
-            }
+        if (bPos == 491 && yPos == 661) {
+            if (n < 6) 
+                {n++;
+                }
             s -= 1;      
         }
     }
@@ -173,7 +173,7 @@ if (yPos <= innerHeight && side == 7) {
     }
     ballPos();
     xPos += speed;
-    if (s >= 0) {
+    if (s <= 0) {
         background('black');
         image(youlose, 766, 0, 300, 300);
         image(tryagain, 700, 200, 500, 500);
@@ -186,7 +186,7 @@ if (yPos <= innerHeight && side == 7) {
 }
 
 
-if (n == 7) {
+if (n == 6) {
         background('black');
          image(winScreen, 766, 0, 300, 300);
         image(continueimg, 700, 200, 500, 500);
@@ -234,7 +234,7 @@ function mousePressed() {
     if (mouseX > 970 && mouseX < 970 + 200 && mouseY > 660 && mouseY < 660 + 200) {
         window.location.href = "index.html";
     } else if (mouseX > 701 && mouseX < 701 + 220 && mouseY > 640 && mouseY < 640 + 220) {
-        window.location.href = "index3.html";
+        window.location.href = "index6.html";
     }
 }
 
