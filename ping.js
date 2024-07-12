@@ -9,7 +9,7 @@ let side = 7;
 let character;
 let continueimg;
 let yesimg;
-let noimg
+let noimg;
 
 let background1;
 
