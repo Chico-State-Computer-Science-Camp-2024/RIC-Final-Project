@@ -11,9 +11,46 @@ h1 {
     font-size: 120px;
 }
 
-.CharSelect {
+hover {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.charList {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.CharSelect1:hover + .paddleCursor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+.CharSelect2:hover + .paddleCursor{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+.paddleCursor {
+    display:none;
+    height: auto;
+    width: 12.5%;
+    position: fixed;
+    top: 55%;
+    left:3%;
+}
+
+.paddleCursor2 {
+    display:none;
+    height: auto;
+    width: 12.5%;
+    right:3%;
+    top:55%;
+    position:fixed;
 }
 
 .text {
