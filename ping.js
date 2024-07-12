@@ -88,61 +88,61 @@ if (yPos <= innerHeight && side == 7) {
     yPos += 2;
 }
   
-    if ((xPos >= Math.floor((innerWidth * 3 / 4) - 10) && xPos <= Math.floor((innerWidth * 3 / 4) + 10))) {
-        if (bPos == 491 && yPos == 661) {
-            boss = saboss;
-            speed = -speed;
-            let rand = Math.random() * 100;
-            let = rand2 = Math.random() * 100;
-            if (rand > 50) {
-                bPos = 162;
+if ((xPos >= Math.floor((innerWidth * 3 / 4) - 10) && xPos <= Math.floor((innerWidth * 3 / 4) + 10))) {
+    if (bPos == 491 && yPos == 661) {
+        if (n < 6) 
+            {n++;
             }
-            else if (rand < 50){
-                bPos = 491;
-            }
+        boss = saboss;
+        speed = -speed;
+        let rand = Math.random() * 100;
+        let = rand2 = Math.random() * 100;
+        if (rand > 50) {
+            bPos = 162;
+        }
+        else if (rand < 50){
+            bPos = 491;
+        }
 
-            if (rand2 > 50) {
-                side = 'left';
-            }
-            else {
-                side = 'straight';
-            }
+        if (rand2 > 50) {
+            side = 'left';
         }
-        if  (bPos == 162 && yPos == 325 ) {
-            if (n < 6) {
-                n++;
-            }
-            boss = saboss;
-            speed = -speed;
-            side = 9;
-            rand = Math.random() * 100;
-            let rand2 = Math.random() * 100;
-            if (rand > 50) {
-                bPos = 162;
-            }
-            else if (rand < 50){
-                bPos = 491;
-            }
-            if (rand2 > 50) {
-                side = 'right';
-            }
-            else {
-                side = 'straight';
-            }
-        }
-        if (boss != boss1) {
-            setTimeout(function() {
-                saboss.reset();
-                boss = boss1;
-            }, 1000);
-        }
-        if (bPos == 491 && yPos == 661) {
-            if (n < 6) 
-                {n++;
-                }
-            s -= 1;      
+        else {
+            side = 'straight';
         }
     }
+    if  (bPos == 162 && yPos == 325 ) {
+       if (n < 6) 
+        {n++;
+        }
+        boss = saboss;
+        speed = -speed;
+        side = 9;
+        rand = Math.random() * 100;
+        let rand2 = Math.random() * 100;
+        if (rand > 50) {
+            bPos = 162;
+        }
+        else if (rand < 50){
+            bPos = 491;
+        }
+        if (rand2 > 50) {
+            side = 'right';
+        }
+        else {
+            side = 'straight';
+        }
+    }
+    if (boss != boss1) {
+        setTimeout(function() {
+            saboss.reset();
+            boss = boss1;
+        }, 1000);
+    }
+    if (xPos >= innerWidth * 4 / 5 - 100) {
+        s -= 1;      
+    }
+}
     else if (xPos >= Math.floor((innerWidth * 1 / 4) - 10) && xPos <= Math.floor((innerWidth * 1 / 4) + 10)) {
         if ((keyIsDown(65) && ((pPos == 162 && yPos == 325) || (pPos == 519 && yPos == 661)))) {
         speed = -speed;
@@ -181,18 +181,18 @@ if (yPos <= innerHeight && side == 7) {
         image(yesimg2, 701, 640, 220, 220);
         return;
     }
-
-    
-}
-
-
-if (n == 6) {
+    if (n == 6) {
         background('black');
          image(winScreen, 766, 0, 300, 300);
         image(continueimg, 700, 200, 500, 500);
         image(noimg, 970, 660, 200, 200);
         image(yesimg, 701, 640, 220, 220);
 }
+    
+}
+
+
+
 
 function task(t) {
     if (t >= 0) {
